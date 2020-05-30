@@ -41,6 +41,11 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+
+
+// Uncomment this line
+
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

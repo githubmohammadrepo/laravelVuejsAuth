@@ -5,24 +5,7 @@
       app
       clipped
     >
-      <v-list dense>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-view-dashboard</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Dashboard</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-cog</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Settings</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
+      <Headpage></Headpage>
     </v-navigation-drawer>
 
     <v-app-bar
@@ -38,27 +21,9 @@
         class="fill-height"
         fluid
       >
-        <v-row
-          align="center"
-          justify="center"
-        >
-          <v-col class="shrink">
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  :href="source"
-                  icon
-                  large
-                  target="_blank"
-                  v-on="on"
-                >
-                  <v-icon large>mdi-code-tags</v-icon>
-                </v-btn>
-              </template>
-              <span>Source</span>
-            </v-tooltip>
-          </v-col>
-        </v-row>
+
+        <router-view></router-view>
+
       </v-container>
     </v-content>
 
@@ -69,6 +34,7 @@
 </template>
 
 <script>
+import Headpage from './Headpage'
   export default {
     props: {
       source: String,
@@ -79,5 +45,8 @@
     created () {
       this.$vuetify.theme.dark = true
     },
+    components:{
+        Headpage,
+    }
   }
 </script>

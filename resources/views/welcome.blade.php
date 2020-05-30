@@ -1,6 +1,4 @@
 @extends('layouts.app')
 @section('content')
-        <admin source="something"></admin>
-
-    </v-app>
+    <admin source="something"></admin>
 @endsection
